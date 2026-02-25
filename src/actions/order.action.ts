@@ -2,7 +2,7 @@
 
 import { CreateOrderPayload, OrderResponse } from '@/types/order';
 
-const BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000';
+const BASE_URL = process.env.API_BASE_URL || 'https://bangaborn-server-render.onrender.com';
 
 export async function createOrder(payload: CreateOrderPayload): Promise<OrderResponse> {
   const res = await fetch(`${BASE_URL}/api/orders`, {

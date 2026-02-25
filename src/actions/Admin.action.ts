@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { AdminLoginPayload, AdminLoginResponse, OrdersResponse, IOrder } from '@/types/admin';
 import { IProduct, ProductQuery, ProductsResponse } from '@/types/products';
 
-const BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000';
+const BASE_URL = process.env.API_BASE_URL || 'https://bangaborn-server-render.onrender.com';
 
 // ─── Auth ───────────────────────────────────────────────────────────────────
 
@@ -37,6 +37,7 @@ export async function getAdminToken(): Promise<string | null> {
 
 export async function verifyAdminToken(): Promise<boolean> {
   const token = await getAdminToken();
+
   if (!token) return false;
   try {
     const res = await fetch(`${BASE_URL}/api/admin/verify`, {

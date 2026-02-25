@@ -3,7 +3,7 @@
 import { ProductQuery, ProductsResponse } from '@/types/products';
 import { IProduct } from '@/types/products';
 
-const BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000';
+const BASE_URL = process.env.API_BASE_URL || 'https://bangaborn-server-render.onrender.com';
 
 export async function fetchProducts(query: ProductQuery): Promise<ProductsResponse> {
   const params = new URLSearchParams();

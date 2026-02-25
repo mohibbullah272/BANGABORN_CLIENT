@@ -26,6 +26,7 @@ export function AdminLoginForm() {
     setErr('');
     startTransition(async () => {
       const res = await adminLogin(form);
+    
       if (res.success) {
         toast.success('Welcome back, Admin!');
         router.replace('/admin/web-management');

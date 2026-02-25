@@ -66,7 +66,7 @@ export function ProductForm({ product, onSuccess, onCancel }: ProductFormProps) 
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [isPending, startTransition] = useTransition();
   const fileRef = useRef<HTMLInputElement>(null);
-  const { upload, uploading, progress } = useCloudinaryUpload();
+  const { upload, uploading, progress,error } = useCloudinaryUpload();
 
   const set = <K extends keyof FormData>(key: K, val: FormData[K]) => {
     setForm((f) => ({ ...f, [key]: val }));
@@ -94,11 +94,13 @@ export function ProductForm({ product, onSuccess, onCancel }: ProductFormProps) 
     try {
       toast.info('Uploading image(s)…');
       const results = await Promise.all(files.map((f) => upload(f)));
+      console.log(results)
       const urls = results.map((r) => r.url);
       set('images', [...form.images, ...urls]);
       toast.success(`${urls.length} image(s) uploaded!`);
-    } catch {
+    } catch (err){
       toast.error('Image upload failed');
+     console.log(err)
     }
     e.target.value = '';
   };
