@@ -96,10 +96,11 @@ export function FeaturedCard({ product, index }: FeaturedCardProps) {
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-1.5">
+                <div className="flex flex-col items-center gap-1.5">
                   <span className="text-sm font-black text-white">
                     ৳{displayPrice.toLocaleString()}
                   </span>
+                
                   {hasDiscount && (
                     <span className="text-[10px] text-white/45 line-through">
                       ৳{product.price.toLocaleString()}

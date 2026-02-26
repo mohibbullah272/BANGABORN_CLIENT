@@ -32,7 +32,7 @@ export const Navbar = () => {
     <section
       className={cn(
         "bg-background/70 fixed left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12" ,
+        "top-3 lg:top-5 " ,
         pathname === "/admin/web-management" && "hidden"
       )}
     >

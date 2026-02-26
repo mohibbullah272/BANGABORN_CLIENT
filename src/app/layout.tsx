@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-  
+  <meta charSet="UTF-8" />
       </head>
       <body className={`${dmSans.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
@@ -83,7 +83,7 @@ export default function RootLayout({
         >
           <StyleGlideProvider />
           <Navbar />
-          <main className="">{children}</main>
+          <main >{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

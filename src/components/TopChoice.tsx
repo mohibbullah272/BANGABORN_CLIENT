@@ -1,5 +1,7 @@
+// @ts-nocheck
 import React from "react";
 import { MacbookScroll } from "./ui/Macbook_scroll";
+import Link from "next/link";
 
 
 
@@ -8,7 +10,9 @@ export function TopChoice(products: any[]) {
 
   return (
     <div className="w-full overflow-hidden ">
-      <MacbookScroll
+       
+<Link href={`/products/${products?.product[0]?.slug}`}>
+<MacbookScroll
         title={
           <span>
       Most Favorite Item <br /> For Clients.
@@ -19,10 +23,11 @@ export function TopChoice(products: any[]) {
             <Badge className="h-10 w-10 -rotate-12 transform" />
           </a>
         }
-        // @ts-ignore
+ 
         src={products?.product[0]?.images[0]}
         showGradient={true}
       />
+</Link>
     </div>
   );
 }

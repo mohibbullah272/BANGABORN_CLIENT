@@ -26,7 +26,7 @@ export function ProductsContent({ products, total, page, totalPages }: ProductsC
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-6">
         {/* Filter Sidebar */}
         <Suspense fallback={null}>
           <FilterSidebar />

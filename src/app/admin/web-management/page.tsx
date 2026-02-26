@@ -20,11 +20,11 @@ async function getAdminEmail(): Promise<string> {
 
 export default async function WebManagementPage() {
   // Auth guard
-  // const isAuth = await verifyAdminToken();
-  // if (!isAuth) {
-  //   redirect('/admin/web-management/login');
-  // }
-// to do update security concern
+  const isAuth = await verifyAdminToken();
+  if (!isAuth) {
+    redirect('/admin/web-management/login');
+  }
+
   // Parallel data fetching
   const [ordersRes, productsRes, adminEmail] = await Promise.all([
     fetchAdminOrders({ page: 1, limit: 50 }),

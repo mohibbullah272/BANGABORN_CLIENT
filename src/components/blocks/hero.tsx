@@ -102,7 +102,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className=" max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
+      <div className="  max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
         <div className="relative h-[793px] w-full">
           <Image
             src="/logos/WhatsApp Image 2026-02-20 at 1.49.22 AM.jpeg"
